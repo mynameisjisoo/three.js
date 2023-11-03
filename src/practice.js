@@ -33,6 +33,7 @@ scene.add(light);
 
 const loader = new GLTFLoader(); // GLTF파일 불러오기 위함
 loader.load("/clown_fish/scene.gltf", (gltf) => {
+  console.log(gltf);
   scene.add(gltf.scene);
   gltf.scene.rotation.y = Math.PI * 0.5; // y축 반만큼 회전
 
@@ -43,6 +44,7 @@ loader.load("/clown_fish/scene.gltf", (gltf) => {
     step += 0.1;
     gltf.scene.position.x = step;
     renderer.render(scene, camera);
+    // console.log(gltf.scene.position.x);
   };
 
   animate();
